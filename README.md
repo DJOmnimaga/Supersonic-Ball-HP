@@ -9,7 +9,7 @@ https://djomnimaga.music-2000.com
 
 
 
-#INTRODUCTION
+# INTRODUCTION
 
 Thanks for downloading Supersonic Ball, a game written in Axe language for the TI-83 Plus and TI-84 Plus series. This project was started in
 July 2010, back in the early days of Axe Parser for the TI-83 Plus series of calculators, but went into hiatus until September 2013 before
@@ -23,7 +23,7 @@ smooth scrolling and parallax backgrounds. Try to get as far as possible as fast
 highest score!
 
  
-#INCLUDED FILES
+# INCLUDED FILES
 
 -ssball.hpprgm: The game executable.
 
@@ -33,7 +33,7 @@ highest score!
 
 
 
-#INSTALLING
+# INSTALLING
 
 -Send ssball.hpprgm to your HP Prime calculator using the HP Connectivity Kit. For speed reasons a G2 hardware revision is recommended.
  On the Virtual Calculator the speed will be slowed down to match something approaching G2 execution speed.
@@ -41,7 +41,7 @@ highest score!
 -Run ssball from the program menu.
 
 
-#HOW TO PLAY
+# HOW TO PLAY
 
 On the title screen:
 
@@ -72,7 +72,7 @@ Game over screen:
 -Enter: Go back to title screen
 
 
-#SPECIAL THANKS
+# SPECIAL THANKS
 
 -Quigibo for making the Axe programming language and Runer112 for continuing its legacy. Without it the original version of this game might
  have never been made.
@@ -82,7 +82,7 @@ Game over screen:
 -The calculator community for support.
 
 
-#DISCLAIMERS
+# DISCLAIMERS
 
 -If you are planning to use source code of my game in your programs, please at least give me credits.
 
@@ -94,7 +94,7 @@ Game over screen:
 -Contrary to popular belief, no walrus, lobster and blub-fish were harmed during the making of this game. No other animals were, either.
 
 
-#VERSION HISTORY
+# VERSION HISTORY
 
 1.00 (2022-03-10)
 
