@@ -3,7 +3,7 @@ A 2D platformer where you guide a bouncing ball through a tunnel before the time
 Version 1.01 for the HP Prime graphing calculators  
 2013-2022 DJ Omnimaga Music  
 https://djomnimaga.music-2000.com
-
+https://discord.gg/cuZcfcF
 
 # INTRODUCTION
 
@@ -70,7 +70,7 @@ Game over screen:
 
 # VERSION HISTORY
 
-1.01 (2023-10-23)
--Fixed highscore resetting itself to zero everytime the game code is opened by accident
-1.00 (2022-03-10)
--Initial release of HP Prime version
+1.01 (2023-10-23)  
+-Fixed highscore resetting itself to zero everytime the game code is opened by accident  
+1.00 (2022-03-10)  
+-Initial release of HP Prime version  
