@@ -1,6 +1,6 @@
 # Supersonic-Ball-HP
 A 2D platformer where you guide a bouncing ball through a tunnel before the time runs out  
-Version 1.00 for the HP Prime graphing calculators  
+Version 1.01 for the HP Prime graphing calculators  
 2013-2022 DJ Omnimaga Music  
 https://djomnimaga.music-2000.com
 
@@ -70,5 +70,7 @@ Game over screen:
 
 # VERSION HISTORY
 
-1.00 (2022-03-10)  
+1.01 (2023-10-23)
+-Fixed highscore resetting itself to zero everytime the game code is opened by accident
+1.00 (2022-03-10)
 -Initial release of HP Prime version
