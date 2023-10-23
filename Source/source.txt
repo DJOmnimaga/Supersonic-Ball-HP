@@ -1,16 +1,14 @@
 // Supersonic Ball HP
 // For the HP Prime
-// Version 1.00
-// Remake of original TI-83 Plus game
-// By DJ Omnimaga
-// (c) 2013-22 DJ Omnimaga Music
-// www.djomnima.ga
+// Version 1.01
+// Remake of original TI-83 Plus & TI-84 Plus game
+// (c) 2013-22 Dream of Omnimaga
+// https://djomnimaga.music-2000.com/
 initialize();
 fadeIn();
 fadeOut();
 titleScreen();
 mainGame();
-sSBallHighScore;
 LOCAL levelData, currentLevel, score, levelListOffset;
 LOCAL highScore, tileSet, tileSetWindow, motionBlur;
 LOCAL escPressed, cachedMode, numSeparateSetting;
@@ -18,6 +16,9 @@ LOCAL hardwareRevision, gameSpeed, screenshotMode, screenshotModeWait;
 
 EXPORT ssball()
 BEGIN
+  IF POS(HVars,"sSBallHighScore") == 0 THEN
+    HVars("sSBallHighScore") := 0;
+  END;
   screenshotMode := 1;
   tileSet := 6;
   motionBlur := 256;
@@ -348,15 +349,15 @@ BEGIN
   RECT_P(G3,216,112,218,137,tileSetWindow[tileSet+17],tileSetWindow[tileSet+25]);
   FILLPOLY_P(G3,{{107,112},{216,112},{216,137},{107,137}}, tileSetWindow[tileSet+33], 128);
   BLIT_P(G3,110,110,214,133,G6,246,17,350,40,#2A2C26);
-  IF score>sSBallHighScore THEN
+  IF score > HVars("sSBallHighScore") THEN
     BLIT_P(G3,120,47,172,64,G6,258,0,310,17,#2A2C26);
-    sSBallHighScore := score;  
+    HVars("sSBallHighScore") := score;  
     FOR forVar1 FROM 0 TO 2 STEP 2 DO
       FOR forVar2 FROM 0 TO 2 STEP 2 DO
-        TEXTOUT_P(sSBallHighScore,G3,forVar2+175,forVar1+47,1,#FF0000);
+        TEXTOUT_P(HVars("sSBallHighScore"),G3,forVar2+175,forVar1+47,1,#FF0000);
       END;
     END;
-  TEXTOUT_P(sSBallHighScore,G3,176,48,1,#FFFF00);
+  TEXTOUT_P(HVars("sSBallHighScore"),G3,176,48,1,#FFFF00);
   END;
   BLIT_P(G0,0,0,320,240,G3,0,0,320,240,#2A2C26);
   WHILE ISKEYDOWN(30)=0 DO
@@ -392,11 +393,11 @@ BEGIN
         IF forVar1=0 AND (forVar2=0 or forVar2=2) THEN
           BLIT_P(G6,64*forVar2,40,64*forVar2+126,55,"titleLogo",0,tileSet*15,63,(tileSet*15)+15,RGB(128,0,128));
         END;
-        TEXTOUT_P("©2013-2022 DJ Omnimaga Music - www.djomnima.ga Highscore:",G6,forVar2,forVar1,1,tileSetWindow[tileSet+1]);
+        TEXTOUT_P("  ©2022 Dream of Omnimaga www.discord.gg/cuZcfcF    Highscore:",G6,forVar2,forVar1,1,tileSetWindow[tileSet+1]);
         TEXTOUT_P("Press Enter   Time: LV: PTS: Game Over",G6,forVar2,17+forVar1,6,tileSetWindow[tileSet+1]);
       END;
     END;
-    TEXTOUT_P("©2013-2022 DJ Omnimaga Music - www.djomnima.ga Highscore:",G6,1,1,1,tileSetWindow[tileSet+9]);
+    TEXTOUT_P("  ©2022 Dream of Omnimaga www.discord.gg/cuZcfcF    Highscore:",G6,1,1,1,tileSetWindow[tileSet+9]);
     TEXTOUT_P("Press Enter   Time: LV: PTS: Game Over",G6,1,18,6,tileSetWindow[tileSet+9]);
     // Main title loop;
     WHILE (themeKeyPressed>0 OR (ISKEYDOWN(7)=0 AND ISKEYDOWN(8)=0)) AND escPressed=0 AND enterPressed=0 DO
@@ -447,16 +448,16 @@ BEGIN
       BLIT_P(G3,120,144,172,161,G6,258,0,310,17,#2A2C26);
       FOR forVar1 FROM 0 TO 2 STEP 2 DO
         FOR forVar2 FROM 0 TO 2 STEP 2 DO
-          TEXTOUT_P(sSBallHighScore,G3,forVar2+175,forVar1+144,1,tileSetWindow[tileSet+1]);
+          TEXTOUT_P(HVars("sSBallHighScore"),G3,forVar2+175,forVar1+144,1,tileSetWindow[tileSet+1]);
         END;
       END;
-      TEXTOUT_P(sSBallHighScore,G3,176,145,1,tileSetWindow[tileSet+9]);
+      TEXTOUT_P(HVars("sSBallHighScore"),G3,176,145,1,tileSetWindow[tileSet+9]);
       IF ballAniFrm>1 THEN
         BLIT_P(G3,108,162,218,185,G6,0,17,110,40,#2A2C26);
       END;
       //Version number
       FOR forVar2 FROM 0 TO 1 DO
-        TEXTOUT_P("Version v1.00",G3,128+forVar2,132,1,#000000);
+        TEXTOUT_P("Version v1.01",G3,128+forVar2,132,1,#000000);
       END;
       //Same for the small logo strips
       BLIT_P(G3,32,5,288,20,G6,0,40,256,55,#2A2C26);
